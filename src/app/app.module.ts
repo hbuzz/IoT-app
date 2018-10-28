@@ -5,12 +5,22 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+
+import { BatteryPage } from "../pages/battery/battery";
+import { SeniorPage } from "../pages/senior/senior";
+import { TabPage } from '../pages/tab/tab'
+
+
+
+
+import { DataFeedProvider } from '../providers/data-feed/data-feed';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    BatteryPage,
+    SeniorPage,
+    TabPage
   ],
   imports: [
     BrowserModule,
@@ -19,12 +29,15 @@ import { HomePage } from '../pages/home/home';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    BatteryPage,
+    SeniorPage,
+    TabPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    DataFeedProvider
   ]
 })
 export class AppModule {}
